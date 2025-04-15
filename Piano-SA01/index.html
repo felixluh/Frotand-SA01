@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <title>Piano</title>
+  <meta charset="UTF-8">
+  <title>Piano</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="piano">
-        <div data-note="C" class="key white"></div> <!-- Primeira tecla Branca-->
-        <div data-note="Db" class="key black"></div> <!-- Primeira tecla Preta-->
-        <div data-note="D" class="key white"></div>
-        <div data-note="E" class="key black"></div>
-        <div data-note="Eb" class="key white"></div>
-        <div data-note="F" class="key black"></div> 
-        <div data-note="Db" class="key white"></div>   
-        <div data-note="Db" class="key black"></div>
-        <div data-note="Db" class="key white"></div>
-        <div data-note="Db" class="key black"></div>
-        <div data-note="Db" class="key white"></div>
-        <div data-note="Db" class="key black"></div>
-    </div>
+  <h1>Piano em JavaScript</h1>
+  <div class="piano">
+    <div class="key white" data-note="C">C</div> 
+    <div class="key black" data-note="C#" style="left: 40px;"></div> 
+    <div class="key white" data-note="D" style="left: 60px;">D</div> 
+    <div class="key black" data-note="D#" style="left: 100px;"></div>
+    <div class="key white" data-note="E" style="left: 120px;">E</div>
+    <div class="key white" data-note="F" style="left: 180px;">F</div>
+    <div class="key black" data-note="F#" style="left: 220px;"></div>
+    <div class="key white" data-note="G"style="left: 240px;">G</div>
+    <div class="key black" data-note="G#" style="left: 280px;"></div>
+    <div class="key white" data-note="A" style="left: 300px;">A</div>
+    <div class="key black" data-note="A#" style="left: 340px;"></div>
+    <div class="key white" data-note="B"style="left: 360px;">B</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
