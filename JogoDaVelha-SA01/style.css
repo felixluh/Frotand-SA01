@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .game-container {
+    background: #ffffff10;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background-color: #ffffff15;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 20px;
+  }
+  
+  .cell {
+    background-color: #ffffff20;
+    border: 2px solid #ffffff40;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .cell:hover {
+    background-color: #ffffff40;
+    transform: scale(1.05);
+  }
+  
+  #message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    min-height: 24px;
+    color: #fff;
+  }
+  
+  #resetButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  #resetButton:hover {
+    background-color: #0097a7;
+  }
+  
+  #resetScoreButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #resetScoreButton:hover {
+    background-color: #ad1457;
+  }
+  
+  @media (max-width: 400px) {
+    .cell {
+      font-size: 2rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    #resetButton,
+    #resetScoreButton {
+      width: 100%;
+    }
+  }
+  
