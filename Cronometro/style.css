@@ -27,12 +27,10 @@ body {
   }
   
   #display {
-    font-size: 48px;
-    margin-bottom: 30px;
+    font-family: 'DS-Digital', monospace;
+    font-size: 60px;
     color: #ffffff;
-    font-weight: bold;
   }
-  
   .buttons {
     display: flex;
     justify-content: center;
@@ -58,5 +56,10 @@ body {
   .buttons button:active {
     transform: scale(1.4); /* Botão expande ainda mais ao clicar */
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+
+  @font-face {
+    font-family: 'DS-Digital';
+    src: url('fonts/DS-DIGIT.TTF') format('truetype');
   }
   
