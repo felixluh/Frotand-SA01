@@ -1,45 +1,55 @@
-let segundos = 0;
-let minutos = 0;
-let horas = 0;
-let intervalo;
-let pausado = false;
+let timer;
+let running = false;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+let clickSound = document.getElementById("clickSound");
+
+function playClickSound() {
+  clickSound.play(); // Toca o som ao clicar
+}
 
 function start() {
-  if (!pausado) {
-    intervalo = setInterval(timer, 1000);
-  } else {
-    pausado = false;
+  playClickSound();
+  if (!running) {
+    running = true;
+    timer = setInterval(updateTime, 1000); // Atualiza o tempo a cada segundo
   }
 }
 
 function pause() {
-  clearInterval(intervalo);
-  pausado = true;
+  playClickSound();
+  running = false;
+  clearInterval(timer); // Pausa o cronômetro
 }
 
 function reset() {
-  clearInterval(intervalo);
-  segundos = 0;
-  minutos = 0;
-  horas = 0;
-  pausado = false;
-  document.getElementById('display').textContent = '00:00:00';
+  playClickSound();
+  running = false;
+  clearInterval(timer); // Reseta o cronômetro
+  seconds = 0;
+  minutes = 0;
+  hours = 0;
+  updateDisplay(); // Atualiza a tela
 }
 
-function timer() {
-  segundos++;
-  if (segundos === 60) {
-    segundos = 0;
-    minutos++;
-    if (minutos === 60) {
-      minutos = 0;
-      horas++;
-    }
+function updateTime() {
+  seconds++;
+  if (seconds >= 60) {
+    seconds = 0;
+    minutes++;
   }
+  if (minutes >= 60) {
+    minutes = 0;
+    hours++;
+  }
+  updateDisplay();
+}
 
-  let formatHora = (horas < 10 ? '0' + horas : horas);
-  let formatMin = (minutos < 10 ? '0' + minutos : minutos);
-  let formatSeg = (segundos < 10 ? '0' + segundos : segundos);
-
-  document.getElementById('display').textContent = `${formatHora}:${formatMin}:${formatSeg}`;
+function updateDisplay() {
+  const display = document.getElementById("display");
+  display.textContent =
+    (hours < 10 ? "0" : "") + hours + ":" +
+    (minutes < 10 ? "0" : "") + minutes + ":" +
+    (seconds < 10 ? "0" : "") + seconds;
 }
